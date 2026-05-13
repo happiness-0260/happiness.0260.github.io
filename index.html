@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>법률 상담 신청 - 개인정보 동의</title>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: 0 auto; color: #333; }
+        .container { border: 1px solid #ddd; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+        .agreement-box { background: #f9f9f9; border: 1px solid #eee; padding: 15px; height: 200px; overflow-y: scroll; font-size: 0.9em; margin-bottom: 20px; }
+        .check-area { margin-bottom: 30px; font-weight: bold; text-align: center; }
+        button { width: 100%; padding: 15px; background: #2c3e50; color: white; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: 0.3s; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        button:hover:not(:disabled) { background: #1a252f; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>법률 상담 예약 동의</h2>
+    <p>상담 예약을 위해 아래 개인정보 수집 및 이용에 동의해 주세요.</p>
+
+    <div class="agreement-box">
+        <strong>1. 수집하는 개인정보 항목</strong><br>
+        성명, 연락처, 상담 희망 분야, 상담 내용 요약 등<br><br>
+        <strong>2. 수집 및 이용 목적</strong><br>
+        변호사 상담 예약 및 일정 조율, 기초 자료 검토<br><br>
+        <strong>3. 보유 및 이용 기간</strong><br>
+        상담 완료 후 1년 (또는 신청일로부터 3개월 후 파기)<br><br>
+        <strong>4. 동의 거부 권리</strong><br>
+        귀하는 동의를 거부할 수 있으나, 거부 시 상담 예약 서비스 이용이 제한될 수 있습니다.
+    </div>
+
+    <div class="check-area">
+        <input type="checkbox" id="agree_check">
+        <label for="agree_check"> 위 내용을 확인하였으며, 이에 동의합니다.</label>
+    </div>
+
+    <!-- 구글 캘린더 예약 링크를 href 부분에 넣으세요 -->
+    <button id="next_btn" disabled onclick="location.href='https://calendar.app.google/5egG8At9Ynqmzr7h9'">
+        예약 시간 선택하러 가기
+    </button>
+</div>
+
+<script>
+    const checkbox = document.getElementById('agree_check');
+    const button = document.getElementById('next_btn');
+
+    // 체크박스 상태에 따라 버튼 활성화/비활성화
+    checkbox.addEventListener('change', function() {
+        button.disabled = !this.checked;
+    });
+</script>
+
+</body>
+</html>
